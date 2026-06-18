@@ -1,9 +1,7 @@
-FROM eclipse-temurin:17-jdk
+FROM tomcat:9.0-jdk17
 
-WORKDIR /app
+WORKDIR /usr/local/tomcat/webapps/
 
-COPY target/*.war app.war
+COPY target/webapp.war app.war
 
 EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "app.war"]
